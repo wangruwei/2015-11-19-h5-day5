@@ -185,6 +185,13 @@
     		oTimeline.style.width = scale*(oBar.offsetWidth)+'px';
     		oSlide.style.left = scale*(oBar.offsetWidth+6-oSlide.offsetWidth)-3+'px';
             oNum.innerHTML = time2min(this.currentTime)+'/'+time2min(this.duration);
+            console.log(scale);
+            if(scale==1){
+                oVideo.currentTime = 0
+                oVideo.pause();
+                oPause.style.display = 'none';
+                oPlay.style.display = 'block';
+            };
     	};
         oBar.onclick = function(ev){
             var disX = ev.clientX-getPos(oBar).left;
